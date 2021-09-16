@@ -1,0 +1,26 @@
+.messagesContainer{
+    border: solid black 1px;
+    margin: 5vh auto;
+    width: 40%;
+}
+
+.chat{
+    border: solid black 2px;
+    margin: 1vh auto;
+    padding: 1vh 0.5vw;
+    width: 70%;
+}
+
+textarea {
+    display: block;
+    resize: none;
+    width: 70%;
+    margin: 2vh auto;
+    padding: 1vh 0.5vw;
+}
+
+input[type="button"]{
+    display: block;
+    margin: 1vh auto;
+    padding: 0.6vh 1vw;
+}
