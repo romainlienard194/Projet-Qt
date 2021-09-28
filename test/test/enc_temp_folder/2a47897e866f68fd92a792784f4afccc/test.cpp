@@ -15,13 +15,13 @@ static QString getIdentifier(QWebSocket *peer)
 //Constructeur pour la connexion au serveur
 ChatServer::ChatServer(quint16 port, QObject *parent) :
 	QObject(parent),
-	m_pWebSocketServer(new QWebSocketServer(QStringLiteral("Serveur"),
+	m_pWebSocketServer(new QWebSocketServer(QStringLiteral("Chat Server"),
 		QWebSocketServer::NonSecureMode,
 		this))
 {
 	if (m_pWebSocketServer->listen(QHostAddress::AnyIPv4, 500))
 	{
-		QTextStream(stdout) << "Le serveur écoute sur le port " << port << '\n';
+		QTextStream(stdout) << "Chat Server listening on port " << port << '\n';
 		connect(m_pWebSocketServer, &QWebSocketServer::newConnection,
 			this, &ChatServer::onNewConnection);
 	}
@@ -36,7 +36,7 @@ ChatServer::~ChatServer()
 void ChatServer::onNewConnection()
 {
 	auto pSocket = m_pWebSocketServer->nextPendingConnection();
-	QTextStream(stdout) << getIdentifier(pSocket) << "Connecté\n";
+	QTextStream(stdout) << getIdentifier(pSocket) << " connected!\n";
 	pSocket->setParent(this);
 
 	connect(pSocket, &QWebSocket::textMessageReceived,
@@ -48,7 +48,7 @@ void ChatServer::onNewConnection()
 }
 
 
-//Récupération des messages
+//Message 
 void ChatServer::processMessage(const QString &message)
 {
 	QWebSocket *pSender = qobject_cast<QWebSocket *>(sender());
@@ -63,7 +63,7 @@ void ChatServer::processMessage(const QString &message)
 void ChatServer::socketDisconnected()
 {
 	QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
-	QTextStream(stdout) << getIdentifier(pClient) << "Déconnecté\n";
+	QTextStream(stdout) << getIdentifier(pClient) << " disconnected!\n";
 	if (pClient)
 	{
 		m_clients.removeAll(pClient);

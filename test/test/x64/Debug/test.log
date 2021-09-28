@@ -1,1 +1,6 @@
-﻿Z:\test\test\test.vcxproj(50,5): error MSB4019: Le projet importé "Z:\test\test\QtMsBuild\Qt.props" est introuvable. Vérifiez que le chemin dans la déclaration <Import> est correct et que le fichier existe sur le disque.
+﻿  Reading Qt configuration (C:/Qt/5.14.2/msvc2017_64/bin/qmake)
+  moc test.h
+  main.cpp
+  test.cpp
+  moc_test.cpp
+  test.vcxproj -> C:\Users\Lussiez Julien\Downloads\test\test\x64\Debug\test.exe

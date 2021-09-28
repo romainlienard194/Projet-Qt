@@ -8,7 +8,7 @@ QT_FORWARD_DECLARE_CLASS(QWebSocketServer)
 QT_FORWARD_DECLARE_CLASS(QWebSocket)
 QT_FORWARD_DECLARE_CLASS(QString)
 
-//Classe pour le serveur
+//Class pour le serveur
 
 class ChatServer : public QObject
 	{
