@@ -1,0 +1,1 @@
+﻿Z:\test\test\test.vcxproj(50,5): error MSB4019: Le projet importé "Z:\test\test\QtMsBuild\Qt.props" est introuvable. Vérifiez que le chemin dans la déclaration <Import> est correct et que le fichier existe sur le disque.
