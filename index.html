@@ -8,6 +8,8 @@
     <title>Accueil</title>
 </head>
 <body>
+<!--Formulaire de connexion-->
+    <input type="submit" name="Message" value="Go to messages" onclick='window.location = "Messages.html"; '>
 
     <div class="container">
 
@@ -19,12 +21,18 @@
             <label for="passwd">Password :</label>
             <input type="text" name="password" placeholder="Enter Password">
 
-            <input type="submit" value="Connexion">
-            <h4>Pas de compte ? <a href="register.html">Inscrivez-vous</a></h4>
+            <div class="form_btn">
+                <input type="submit" name="Connexion" value="Connexion">
+                <input type="submit" name="Inscription" value="Inscription">
+            </div>
 
         </form>
 
+        <input type="submit" value="Inscription test js" onclick="Register()">
+
     </div>
+
+    <script type="text/javascript" src="functions.js"></script>
 
 </body>
 </html>

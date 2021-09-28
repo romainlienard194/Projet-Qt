@@ -1,26 +1,58 @@
-.messagesContainer{
-    border: solid black 1px;
-    margin: 5vh auto;
-    width: 40%;
+*{
+    margin: 0%;
+    padding: 0%;
 }
 
-.chat{
-    border: solid black 2px;
+html{
+    background-color: rgb(63, 63, 63);
+}
+
+h1{
+    margin: 3vh auto;
+    text-align: center;
+    color: white;
+}
+
+.IP_Server{
+    margin: 8vh auto 1vh auto;
+    text-align: center;
+}
+
+.IP_Server label{
+    color: white;
+}
+
+.Logs_Buttons{
     margin: 1vh auto;
-    padding: 1vh 0.5vw;
-    width: 70%;
+    text-align: center;
 }
 
-textarea {
+#debugTextArea{
     display: block;
     resize: none;
-    width: 70%;
-    margin: 2vh auto;
-    padding: 1vh 0.5vw;
+    max-width: 80%;
+    min-width: 30%;
+    height: 40vh;
+    margin: 1vh auto;
 }
 
-input[type="button"]{
-    display: block;
-    margin: 1vh auto;
-    padding: 0.6vh 1vw;
+.Message_text input, .Message_text button{
+    display: inline-block;
+    margin: 0vh auto;
+}
+
+#inputNick{
+    color: white;
+}
+
+.Message_text{
+    margin: 0vh auto 5vh auto;
+    text-align: center;
+}
+
+@media screen and ( max-width: 1024px) {
+    #debugTextArea{
+        max-width: 90%;
+        min-width: 70%;
+    }
 }

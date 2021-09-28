@@ -1,29 +1,47 @@
+<script>
+    var DefaultPseudo = "Anonyme";
+</script>
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/message.css">
-    <script src="testjs.js" async defer></script>
-    <title>Accueil</title>
-</head>
-<body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/message.css">
+        <title>WebSocket Chat Client</title>
+    </head>
+    <body>
+        <h1>WebSocket Client</h1>
 
-    <div class="container">
-
-        <div class="messagesContainer">
-            <div class="chat">
-                <p>server : coucou</p>
-                <p>server : test</p>
-            </div>
-    
-            <textarea id="message" name="message" rows="5" cols="33"></textarea>
-            <input type="button" name="send_Message" id="send_message" value="Send">
+        <div class="IP_Server">
+            <label id="webSocketHostLabel">Ip : </label>
+            <input id="webSocketHost" type="text" value="192.168.65.46:500"/>
         </div>
 
-    </div>
+        <div class="Logs_Buttons">
+            <button id="connectButton "onClick="initWebSocket();">Connexion</button>
+            <button id="disconnectButton" onClick="stopWebSocket();" disabled>Déconnexion</button>
+        </div>
 
-</body>
+            <textarea id="debugTextArea" readonly></textarea>
+
+        </div>
+
+        <div class="Message_text">
+            <label for="inputText" id="inputNick"><script>document.write(DefaultPseudo);</script></label>
+            <input type="text" id="inputText" onkeydown="if(event.keyCode==13)sendMessage();"/>
+            <button id="sendButton" onClick="sendMessage();" disabled>Envoyer</button>
+        </div>
+            
+
+        <script>
+            var debugTextArea = document.getElementById("debugTextArea");
+            var websocket = null;
+        </script>
+
+        <script type="text/javascript" src="functions.js"></script>
+
+    </body>
 </html>

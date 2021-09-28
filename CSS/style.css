@@ -3,13 +3,14 @@
     padding: 0%;
 }
 
-a:link {color: black; text-decoration: underline;}
-a:visited {color: black; text-decoration: underline;}
-a:hover {color: black; text-decoration: underline;}
-a:active {color: black; text-decoration: underline;}
+a:link {color: white; text-decoration: underline;}
+a:visited {color: white; text-decoration: underline;}
+a:hover {color: white; text-decoration: underline;}
+a:active {color: white; text-decoration: underline;}
 
 html{
-    background-color: aliceblue;
+    background-color: rgb(51, 51, 51);
+    color: white;
 }
 
 .container{
@@ -25,11 +26,13 @@ h4{
 form{
     margin: 5vh auto;
     width: 25%;
-    border: solid black 1px;
+    border: solid rgb(255, 255, 255) 1px;
     border-radius: 10px;
-    background-color: rgb(219, 218, 218);
-    box-shadow: black 2px 2px;
+    background-color: rgb(36, 36, 36);
+    box-shadow: rgb(161, 161, 161) 5px 5px;
+    color: white;
 }
+
 form label{
     margin: 2vh auto 0vh auto;
     display: block;
@@ -44,8 +47,34 @@ form input{
     text-align: center;
 }
 
+form input[type="text"]{
+    min-width: 60%;
+    max-width: -webkit-fill-available;
+}
+
 form input[type="submit"]{
     border-radius: 10px;
     padding: 1vh 2vw;
     background-color: rgb(255, 255, 255);
+    display: inline-block;
+    margin: 1vh 2vw;
+}
+
+.form_btn{
+    margin: 1vh auto;
+    text-align: center;
+}
+
+@media screen and ( max-width: 1024px) {
+    form{
+        width: 90%;
+    }
+
+    form input[type="text"]{
+        max-width: 80%;
+    }
+
+    form input[type="submit"]{
+        padding: 1.2vh 3vw;
+    }
 }
