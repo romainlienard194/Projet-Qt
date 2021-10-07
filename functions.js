@@ -1,3 +1,5 @@
+/* Fonction d'inscription et de connexion */
+
 function Register(){
     username = document.getElementById('username');
     password = document.getElementById('password');
@@ -17,13 +19,25 @@ function Register(){
     
 }
 
+/* connexion à la BDD */
+
+var mysql = require('mysql');
+    var con = mysql.createConnection({
+
+    host: "192.168.64.52",
+    user: "root",
+    password: "root",
+    database: "Project_QT"
+    });
+
 function debug(message) {
     debugTextArea.value += message + "\n";
     debugTextArea.scrollTop = debugTextArea.scrollHeight;
 }
 
+/* Fonction qui récupère les messages */
+
 function sendMessage() {
-    //var nickname = document.getElementById("inputNick").value;
     var nickname = document.getElementById("inputNick").innerText;
     var msg = document.getElementById("inputText").value;
     var strToSend = nickname + ": " + msg;
@@ -35,6 +49,8 @@ function sendMessage() {
         debug(strToSend);
     }
 }
+
+/* Affichage des messages */
 
 function initWebSocket() {
     try {
@@ -65,6 +81,8 @@ function initWebSocket() {
         debug('ERROR: ' + exception);
     }
 }
+
+/* Arrêt du Websocket*/
 
 function stopWebSocket() {
     if (websocket)
